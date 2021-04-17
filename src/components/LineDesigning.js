@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     topContainer: {
         alignSelf: 'center',
         height: heightPercentageToDP(10),
-        marginTop: widthPercentageToDP(5),
+        marginTop: widthPercentageToDP(2),
         justifyContent: 'center',
         flexDirection: 'row'
     },
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     bottomContainer: {
         width: widthPercentageToDP(10),
         alignSelf: 'center',
-        height: heightPercentageToDP(2),
+        height: heightPercentageToDP(1),
         justifyContent: 'center',
         flexDirection: 'row'
     },

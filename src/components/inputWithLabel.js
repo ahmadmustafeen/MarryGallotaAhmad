@@ -15,7 +15,7 @@ const InputWithLabel = props => {
 }
 const styles = StyleSheet.create({
     container: {
-        marginVertical: widthPercentageToDP(1),
+        marginVertical: widthPercentageToDP(0.5),
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',

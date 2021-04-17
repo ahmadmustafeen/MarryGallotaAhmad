@@ -19,7 +19,7 @@ const options = {
         path: 'images',
     },
 };
-const Home = props => {
+const ViewImage = props => {
     const handleChange = (key, value) => {
         setState((state) => ({ ...state, [key]: value }));
     };
@@ -52,16 +52,16 @@ const Home = props => {
     });
     console.log(state)
     return (
-        <BackgroundScreen>
+        <BackgroundScreen noImage>
 
-            <View style={styles.image}>
+            {/* <View style={styles.image}>
                 <RoundImageIcon iconName="camera" iconColor="rgb(0,250,0)" onIconPress={setImage} source={require("../../assets/images/greyroundicon.png")} />
             </View>
-            <LineDesigning topWidth={widthPercentageToDP(25)} bottomWidth={widthPercentageToDP(25)} />
+            <LineDesigning topWidth={widthPercentageToDP(25)} bottomWidth={widthPercentageToDP(25)} /> */}
             {!state.image?.uri ?
-                <View style={styles.userImage}>
+                <View style={[styles.userImage, { width: widthPercentageToDP(75), height: heightPercentageToDP(25) }]}>
 
-                    <Text style={{ color: 'white' }}>Picture</Text>
+                    <Text style={[styles.text, { color: 'white', textTransform: 'uppercase', fontSize: 24 }]}>Picture</Text>
 
                 </View> :
 
@@ -70,7 +70,7 @@ const Home = props => {
                     source={{ uri: state.image.uri }}
                 />
             }
-            <LineDesigning topWidth={widthPercentageToDP(25)} bottomWidth={widthPercentageToDP(30)} />
+            <LineDesigning topWidth={widthPercentageToDP(35)} bottomWidth={widthPercentageToDP(30)} />
 
             <InputWithLabel label="makrdown" />
             <InputWithLabel label="brand" />
@@ -85,9 +85,9 @@ const Home = props => {
             <View style={styles.image}>
                 <RoundImageIcon text="save" source={require("../../assets/images/greenroundicon.png")} />
             </View>
-            {/* <TouchableOpacity style={styles.text} onPress={() => Alert.alert("true")}>
+            <TouchableOpacity style={styles.text} onPress={() => Alert.alert("true")}>
                 <Text style={styles.title}>Delete</Text>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
             <ModalScreen visible={visible} pressYes={(visible) => setVisible(!visible)} pressNo={() => setVisible(false)} question="Are you sure you want to save?" />
 
         </BackgroundScreen>
@@ -126,4 +126,4 @@ const styles = StyleSheet.create({
 
 
 
-export default Home
+export default ViewImage

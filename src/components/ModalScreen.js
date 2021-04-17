@@ -5,7 +5,7 @@ import BackgroundScreen from './BackgroundScreen'
 
 
 const ModalScreen = props => {
-    const { visible, pressYes, pressNo } = props
+    const { visible, pressYes, question, pressNo } = props
     return (
 
         <Modal animationType="fade" visible={visible}
@@ -21,7 +21,7 @@ const ModalScreen = props => {
             }}>
                 <View style={styles.container}>
                     <View style={styles.containerText}>
-                        <Text style={styles.text}>Are you sure you want to delete?</Text>
+                        <Text style={styles.text}>{question}</Text>
                         <View style={styles.buttonContainer}>
                             <TouchableOpacity style={styles.button} onPress={pressYes}><Text style={styles.text}>YES</Text></TouchableOpacity>
                             <TouchableOpacity style={styles.button} onPress={pressNo}><Text style={styles.text}>NO</Text></TouchableOpacity>
