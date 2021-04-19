@@ -2,7 +2,8 @@ import React from 'react'
 import { ImageBackground, ScrollView, StyleSheet, View } from 'react-native'
 import {
     widthPercentageToDP as wp,
-    heightPercentageToDP as hp
+    heightPercentageToDP as hp,
+    heightPercentageToDP
 } from 'react-native-responsive-screen'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview'
 
@@ -14,7 +15,7 @@ const BackgroundScreen = props => {
                 <ImageBackground source={noImage ? null : require("../assets/images/backgroundIcon.png")}
                     style={styles.bgImage}
                     resizeMode="stretch"
-                    style={{ width: '100%', height: '100%', }}>
+                    style={{ width: '100%', height: '100%', minHeight: heightPercentageToDP(85) }}>
                     {children}
                 </ImageBackground>
 

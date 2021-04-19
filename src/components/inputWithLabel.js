@@ -4,10 +4,10 @@ import { widthPercentageToDP } from 'react-native-responsive-screen'
 
 
 const InputWithLabel = props => {
-    const { label } = props
+    const { label, fontSize } = props
     return (
         <View style={styles.container}>
-            <Text style={styles.label}>{label}</Text>
+            <Text style={[styles.label, { fontSize: fontSize }]}>{label}</Text>
             <TextInput style={styles.input} />
         </View>
 
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignSelf: 'center',
         flexDirection: 'row',
-        width: widthPercentageToDP(70)
+        width: '100%'
     },
     label: {
         fontSize: 10,

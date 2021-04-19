@@ -71,11 +71,13 @@ const Home = props => {
                 />
             }
             <LineDesigning topWidth={widthPercentageToDP(25)} bottomWidth={widthPercentageToDP(30)} />
+            <View style={{ width: widthPercentageToDP(70), alignSelf: 'center' }}>
+                <InputWithLabel label="makrdown" />
+                <InputWithLabel label="brand" />
+                <InputWithLabel label="color" />
+                <InputWithLabel label="size" />
+            </View>
 
-            <InputWithLabel label="makrdown" />
-            <InputWithLabel label="brand" />
-            <InputWithLabel label="color" />
-            <InputWithLabel label="size" />
             <LineDesigning topWidth={widthPercentageToDP(30)} bottomWidth={widthPercentageToDP(10)} />
             <View>
                 <Text style={styles.title}>Description</Text>
@@ -83,12 +85,12 @@ const Home = props => {
             </View>
             <LineDesigning topWidth={widthPercentageToDP(30)} bottomWidth={widthPercentageToDP(30)} />
             <View style={styles.image}>
-                <RoundImageIcon text="save" source={require("../../assets/images/greenroundicon.png")} />
+                <RoundImageIcon text="save" source={require("../../assets/images/greenroundicon.png")} onIconPress={() => setVisible(true)} />
             </View>
             {/* <TouchableOpacity style={styles.text} onPress={() => Alert.alert("true")}>
                 <Text style={styles.title}>Delete</Text>
             </TouchableOpacity> */}
-            <ModalScreen visible={visible} pressYes={(visible) => setVisible(!visible)} pressNo={() => setVisible(false)} question="Are you sure you want to save?" />
+            {visible && <ModalScreen visible={visible} pressYes={() => props.navigation.navigate("ImageList")} pressNo={() => setVisible(false)} question="Are you sure you want to save?" />}
 
         </BackgroundScreen>
     )

@@ -4,10 +4,10 @@ import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsi
 
 
 const LineDesigning = props => {
-    const { topWidth, bottomWidth } = props
+    const { topWidth, bottomWidth, rtl, marginLeft, height } = props
     return (
-        <>
-            <View style={[styles.topContainer, { width: topWidth }]}>
+        <View style={rtl && { transform: [{ rotate: '90deg' }], marginLeft: marginLeft }}>
+            <View style={[styles.topContainer, { width: topWidth, height: height }]}>
                 <View style={styles.leftSide}>
                 </View>
                 <View style={styles.rightSide}>
@@ -19,7 +19,7 @@ const LineDesigning = props => {
                 <View style={styles.rightSideBottom}>
                 </View>
             </View>
-        </>
+        </View>
     )
 }
 

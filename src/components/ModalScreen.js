@@ -8,32 +8,33 @@ const ModalScreen = props => {
     const { visible, pressYes, question, pressNo } = props
     return (
 
-        <Modal animationType="fade" visible={visible}
-        >
-            <View style={{
-                position: 'absolute',
-                backgroundColor: 'rgba(0,0,0,0.6)',
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: widthPercentageToDP(100),
-                height: heightPercentageToDP(100),
-            }}>
-                <View style={styles.container}>
-                    <View style={styles.containerText}>
-                        <Text style={styles.text}>{question}</Text>
-                        <View style={styles.buttonContainer}>
-                            <TouchableOpacity style={styles.button} onPress={pressYes}><Text style={styles.text}>YES</Text></TouchableOpacity>
-                            <TouchableOpacity style={styles.button} onPress={pressNo}><Text style={styles.text}>NO</Text></TouchableOpacity>
-                        </View>
+        // <Modal animationType="fade" visible={visible}
+        // >
+        <View style={{
+            display: 'none',
+            position: 'absolute',
+            backgroundColor: 'rgba(0,0,0,0.6)',
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: widthPercentageToDP(100),
+            height: heightPercentageToDP(100),
+        }}>
+            <View style={[styles.container]}>
+                <View style={styles.containerText}>
+                    <Text style={styles.text}>{question}</Text>
+                    <View style={styles.buttonContainer}>
+                        <TouchableOpacity style={styles.button} onPress={pressYes}><Text style={styles.text}>YES</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.button} onPress={pressNo}><Text style={styles.text}>NO</Text></TouchableOpacity>
                     </View>
                 </View>
-
             </View>
 
+        </View>
 
 
-        </Modal>
+
+        // </Modal>
 
     )
 }
